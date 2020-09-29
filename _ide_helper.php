@@ -7066,7 +7066,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Action must be taken immediately.
          *
-         * Example: Entire website down, database unavailable, etc. This should
+         * App: Entire website down, database unavailable, etc. This should
          * trigger the SMS alerts and wake you up.
          *
          * @param string $message
@@ -7082,7 +7082,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Critical conditions.
          *
-         * Example: Application component unavailable, unexpected exception.
+         * App: Application component unavailable, unexpected exception.
          *
          * @param string $message
          * @param array $context
@@ -7111,7 +7111,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Exceptional occurrences that are not errors.
          *
-         * Example: Use of deprecated APIs, poor use of an API, undesirable things
+         * App: Use of deprecated APIs, poor use of an API, undesirable things
          * that are not necessarily wrong.
          *
          * @param string $message
@@ -7140,7 +7140,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Interesting events.
          *
-         * Example: User logs in, SQL logs.
+         * App: User logs in, SQL logs.
          *
          * @param string $message
          * @param array $context
@@ -9653,7 +9653,7 @@ namespace Illuminate\Support\Facades {
          * Relative URLs from one resource to another are useful when generating self-contained downloadable document archives.
          * Furthermore, they can be used to reduce the link size in documents.
          *
-         * Example target paths, given a base path of "/a/b/c/d":
+         * App target paths, given a base path of "/a/b/c/d":
          * - "/a/b/c/d"     -> ""
          * - "/a/b/c/"      -> "./"
          * - "/a/b/"        -> "../"
@@ -11865,6 +11865,43 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Routing\Router $instance */
             return $instance->macroCall($method, $parameters);
+        }
+        /**
+         *
+         *
+         * @param mixed $options
+         * @static
+         */
+        public static function auth($options = [])
+        {
+            return \Illuminate\Routing\Router::auth($options);
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function resetPassword()
+        {
+            return \Illuminate\Routing\Router::resetPassword();
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function confirmPassword()
+        {
+            return \Illuminate\Routing\Router::confirmPassword();
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function emailVerification()
+        {
+            return \Illuminate\Routing\Router::emailVerification();
         }
     }
     /**
@@ -15278,6 +15315,54 @@ namespace Illuminate\Http {
         public static function hasValidRelativeSignature()
         {
             return \Illuminate\Http\Request::hasValidRelativeSignature();
+        }
+    }
+}
+
+namespace Illuminate\Routing {
+    /**
+     *
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */
+    class Router
+    {
+        /**
+         *
+         *
+         * @param mixed $options
+         * @static
+         */
+        public static function auth($options = [])
+        {
+            return \Illuminate\Routing\Router::auth($options);
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function resetPassword()
+        {
+            return \Illuminate\Routing\Router::resetPassword();
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function confirmPassword()
+        {
+            return \Illuminate\Routing\Router::confirmPassword();
+        }
+        /**
+         *
+         *
+         * @static
+         */
+        public static function emailVerification()
+        {
+            return \Illuminate\Routing\Router::emailVerification();
         }
     }
 }
