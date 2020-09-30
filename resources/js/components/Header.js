@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -9,10 +9,19 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link to="/" as={Link}>
+                    <Nav.Link
+                        to="/"
+                        as={NavLink}
+                        exact
+                        activeClassName="active"
+                    >
                         Sharks
                     </Nav.Link>
-                    <Nav.Link to="/create" as={Link}>
+                    <Nav.Link
+                        to="/create"
+                        as={NavLink}
+                        activeClassName="active"
+                    >
                         Create new shark
                     </Nav.Link>
                 </Nav>
