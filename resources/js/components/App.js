@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./Header";
 import SharkList from "./shark/SharkList";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SharkCreate from "./shark/SharkCreate";
 
 function App() {
     return (
@@ -14,6 +15,9 @@ function App() {
                 <Switch>
                     <Route path="/" exact>
                         <SharkList />
+                    </Route>
+                    <Route path="/create">
+                        <SharkCreate />
                     </Route>
                 </Switch>
             </Container>
