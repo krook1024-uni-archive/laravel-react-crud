@@ -21,10 +21,12 @@ const SharkList = () => {
         <>
             <Table striped bordered hover>
                 <thead>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Actions</th>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {sharks.map((shark) => (
