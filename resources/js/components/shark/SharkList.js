@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import { Table, Spinner } from "react-bootstrap";
+import EditIcons from "./EditIcons";
 
 const SharkList = () => {
     const [loading, setLoading] = useState(true);
@@ -34,7 +35,9 @@ const SharkList = () => {
                             <td>{shark.id}</td>
                             <td>{shark.name}</td>
                             <td>{shark.email}</td>
-                            <td></td>
+                            <td>
+                                <EditIcons object={shark} />
+                            </td>
                         </tr>
                     ))}
                 </tbody>

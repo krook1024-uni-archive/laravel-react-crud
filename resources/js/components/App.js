@@ -6,6 +6,7 @@ import Header from "./Header";
 import SharkList from "./shark/SharkList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SharkCreate from "./shark/SharkCreate";
+import SharkEdit from "./shark/SharkEdit";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/create">
                         <SharkCreate />
                     </Route>
+                    <Route path="/edit/:id" component={SharkEdit} />
                 </Switch>
             </Container>
         </Router>
